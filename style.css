@@ -164,3 +164,152 @@ input[type="password"] {
 .wolken-form-field .wolken-input-placeholder .required {
   color:red;
 }
+
+.wolken-form-field .wolken-input-error {
+  /* display: none; */
+  color:red;
+  font-size: 10px;
+  padding: 0px 5px;
+}
+
+.wolken-form-field .wolken-input-hint {
+  /* display: none; */
+  color:rgba(0,0,0,0.4);
+  font-size: 10px;
+  padding: 0px 5px;
+}
+
+
+/* Checkbox css */
+
+.wolken-checkbox {
+  z-index: 0;
+  position: relative;
+  display: inline-block;
+  color: rgba(0,0,0,0.8);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wolken-checkbox > input {
+  appearance: none;
+  z-index: -1;
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #1A73E8;
+  box-shadow: none;
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.wolken-checkbox > span {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.wolken-checkbox > span::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 3px 11px 3px 1px;
+  border: solid 2px; /* Safari */
+  border-color: rgba(0,0,0,0.6);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.wolken-checkbox > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right: none;
+  border-top: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+}
+
+.wolken-checkbox > input:checked,
+.wolken-checkbox > input:indeterminate {
+    background-color: #1A73E8;
+}
+
+.wolken-checkbox > input:checked + span::before,
+.wolken-checkbox > input:indeterminate + span::before {
+    border-color: #1A73E8;
+    background-color: #1A73E8;
+}
+
+.wolken-checkbox > input:checked + span::after,
+.wolken-checkbox > input:indeterminate + span::after {
+    border-color: #ffffff;
+}
+
+.wolken-checkbox > input:indeterminate + span::after {
+    border-left: none;
+    transform: translate(4px, 3px);
+}
+
+.wolken-checkbox:hover > input {
+    opacity: 0.04;
+}
+
+.wolken-checkbox > input:focus {
+    opacity: 0.12;
+}
+
+.wolken-checkbox:hover > input:focus {
+    opacity: 0.16;
+}
+
+/* Active */
+.wolken-checkbox > input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.wolken-checkbox > input:active + span::before {
+    border-color: #1A73E8;
+}
+
+.wolken-checkbox > input:checked:active + span::before {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Disabled */
+.wolken-checkbox > input:disabled {
+    opacity: 0;
+}
+
+.wolken-checkbox > input:disabled + span {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: initial;
+}
+
+.wolken-checkbox > input:disabled + span::before {
+    border-color: currentColor;
+}
+
+.wolken-checkbox > input:checked:disabled + span::before,
+.wolken-checkbox > input:indeterminate:disabled + span::before {
+    border-color: transparent;
+    background-color: currentColor;
+}
