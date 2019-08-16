@@ -1,5 +1,10 @@
-body {
+* {
   font-family: "Roboto",sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 10px 0px;
 }
 
 .wolken-primary {
@@ -12,6 +17,8 @@ body {
   background: #fff;
 }
 
+
+/* Button classes */
 .wolken-button {
   cursor: pointer;
   border-radius: 4px;
@@ -35,6 +42,10 @@ body {
   outline: 0;
 }
 
+.wolken-button:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12)
+}
+
 .wolken-fab-button {
   cursor: pointer;
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
@@ -53,6 +64,7 @@ body {
   height: 48px;
 }
 
+/* Card classes */
 .wolken-card {
   box-shadow: 0px 1px 2px 0px rgba(60,64,67,0.3), 0px 2px 6px 2px rgba(60,64,67,0.15);
   background: #fff;
@@ -71,3 +83,84 @@ body {
   margin-bottom: 10px;
 }
 
+
+/* Form field Css */
+.wolken-form-field {
+  width: 400px;
+  position: relative;
+  margin: 10px 0px;
+}
+
+.wolken-form-field input, textarea{
+  width: 400px;
+  background: none;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.wolken-form-field textarea {
+  resize: none;
+}
+
+input[type="password"] {
+  letter-spacing: 0.3em;
+}
+
+.wolken-form-field input:focus, textarea:focus{
+  outline: none;
+}
+
+.wolken-form-field input:focus ~ .wolken-input-placeholder,
+  .wolken-form-field input:valid ~ .wolken-input-placeholder {
+  top: -14px;
+  font-size: 12px;
+  color: #1A73E8;
+}
+
+.wolken-form-field textarea:focus ~ .wolken-input-placeholder,
+.wolken-form-field textarea:valid ~ .wolken-input-placeholder {
+  top: -14px;
+  font-size: 12px;
+  color: #1A73E8;
+}
+
+.wolken-form-field input:focus ~ .wolken-input-bar:before,
+.wolken-form-field textarea:focus ~ .wolken-input-bar:before {
+  width: 400px;
+}
+
+.wolken-form-field .wolken-input-bar {
+  position: relative;
+  display: block;
+  width: 400px;
+}
+
+.wolken-form-field .wolken-input-bar:before {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #1A73E8;
+  transition: 300ms ease all;
+  left: 0%;
+}
+
+.wolken-form-field .wolken-input-placeholder {
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+.wolken-form-field .wolken-input-placeholder .required {
+  color:red;
+}
