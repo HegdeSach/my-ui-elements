@@ -86,20 +86,19 @@
 
 /* Form field Css */
 .wolken-form-field {
-  width: 400px;
+  width: 100%;
   position: relative;
   margin: 10px 0px;
 }
 
 .wolken-form-field input, textarea{
-  width: 400px;
+  width: 100%;
   background: none;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #c6c6c6;
+  border: 1px solid rgba(0,0,0,0.17);
+  border-radius: 5px;
 }
 
 .wolken-form-field textarea {
@@ -128,26 +127,9 @@ input[type="password"] {
   color: #1A73E8;
 }
 
-.wolken-form-field input:focus ~ .wolken-input-bar:before,
-.wolken-form-field textarea:focus ~ .wolken-input-bar:before {
-  width: 400px;
-}
-
-.wolken-form-field .wolken-input-bar {
-  position: relative;
-  display: block;
-  width: 400px;
-}
-
-.wolken-form-field .wolken-input-bar:before {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 0px;
-  position: absolute;
-  background: #1A73E8;
-  transition: 300ms ease all;
-  left: 0%;
+.wolken-form-field input:focus,
+.wolken-form-field textarea:focus {
+  border: 2px solid #1A73E8;
 }
 
 .wolken-form-field .wolken-input-placeholder {
@@ -166,14 +148,14 @@ input[type="password"] {
 }
 
 .wolken-form-field .wolken-input-error {
-  /* display: none; */
+  display: none;
   color:red;
   font-size: 10px;
   padding: 0px 5px;
 }
 
 .wolken-form-field .wolken-input-hint {
-  /* display: none; */
+  display: none;
   color:rgba(0,0,0,0.4);
   font-size: 10px;
   padding: 0px 5px;
